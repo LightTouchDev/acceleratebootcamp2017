@@ -1,4 +1,4 @@
-// Hello World
+// Hello world
 // 2 ways, for good measure
 
 console.log('Hello World')
