@@ -1,16 +1,26 @@
 //Marvel API
+let program = require('commander')
+let Marvel = require('./marvel')
 
-var api = require('marvel-api') 
- 
-var marvel = api.createClient({
-  publicKey: '51969ddf181dc7ee2d3b8b367c91dccf'
-, privateKey: '7139be6acf3ecf36fee0e7260489926739ed9046'
+
+program
+  .command('avengers')
+  .action(() => {
+	console.log('avengers')
+	let marvel = new Marvel()
+	marvel.getAvengers()
 })
 
-marvel.characters.findAll((err, results) => {
-  if (err) {
-    return console.error(err) 
-  }
- 
-  console.log(results) 
-}) 
+program
+  .command('spider-man')
+  .action(() => {
+	console.log('spider-man')
+	let marvel = new Marvel()
+	marvel.getSpiderMan()
+})
+
+program.parse(process.argv)
+
+if(!program.args.length) {
+  program.help()
+}
