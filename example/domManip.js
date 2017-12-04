@@ -18,8 +18,8 @@ heading.style.color = 'rgb(9, 191, 11)'
 
 let button = document.createElement('button')
 button.innerHTML = 'click me!!'
+button.onclick = alert(Date())
 //doesn't display date when clicked. why?
-button.onClick = Date()
 
 
 let body = document.getElementById('content')
