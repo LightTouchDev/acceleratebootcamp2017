@@ -140,8 +140,8 @@ class Card {
 
   getContent() {
 	let card = document.createElement('div')
-	//add css card.style
 	card.classList.add = ('col-6')	
+	//what is this ^^
 	card.style.margin = '1%'
 	card.style.borderRadius = '25px'
 	card.style.width = '50%'
