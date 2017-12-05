@@ -4,6 +4,7 @@
   "description": "jarvis web app",
   "main": "index.js",
   "scripts": {
+    "start": "node web-app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "lighttouchdev",
