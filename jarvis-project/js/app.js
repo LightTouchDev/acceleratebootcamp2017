@@ -1,5 +1,5 @@
 import Dashboard from './containers/dashboard.js'
-let MongoClient = require('mongodb').MongoClient
+//let MongoClient = require('mongodb').MongoClient
 
 export default class App {
   constructor() {

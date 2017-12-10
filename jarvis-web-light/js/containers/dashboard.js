@@ -12,18 +12,18 @@ export default class Dashboard {
 	container.appendChild(title)
 	
 	let thorCard = new Card({
-		title: 'Thor Odinson',
-		image: '/images/',
+		title: 'Thor',
+		image: 'images/thorpic.jpg', 
 		description: 'God of thunder',
-		link: ''
+		link: 'http://marvel.com/universe/Thor_(Thor_Odinson)#axzz50XtTBNFf'
 })
 	container.append(thorCard.getContent())
 
 	let hulkCard = new Card({
-		title: 'Hulk / Bruce Banner',
-		image: '/images/',
+		title: 'Hulk',
+		image: 'images/hulkpic.jpg',
 		description: 'Angry green giant',
-		link: ''
+		link: 'http://marvel.com/universe/Hulk_(Bruce_Banner)#axzz50XtTBNFf'
 })
 	container.append(hulkCard.getContent())
 

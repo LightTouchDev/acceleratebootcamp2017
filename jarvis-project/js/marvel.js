@@ -8,8 +8,6 @@ class Marvel {
 	  privateKey: '7139be6acf3ecf36fee0e7260489926739ed9046'
 	})
 	this.url = 'mongodb://localhost:27017/Jarvis'
-//  return marvel
- // return url  
 }
 
   getData (callback) {
@@ -107,7 +105,7 @@ class Marvel {
   	 .fail(console.error)
  	 .done()
   }
-
+/*
   insertDocuments(docs){
 	MongoClient.connect(this.url, (err,db) =>{
 	  if(!err){
@@ -120,14 +118,32 @@ class Marvel {
 	  else {
 	    console.log(err)
 	  }
-
 	})
-
-
   }
 
+   // Perform a simple find and return all the documents
+    collection.find().toArray(function(err, docs) {
+      test.equal(null, err);
+      test.equal(3, docs.length);
 
-	//find({ name: ['thor', 'hulk', 'spider-man']})
+      db.close();
+    });
+*/
+  findDocs(docs) {
+	MongoClient.connect(this.url, (err,db) =>{
+	  if(!err){
+	    let heroes = db.collection('heroes')
+	    heroes.find(docs, (err,result) => {
+		console.log(result)
+	    })
+	    return heroes
+	    db.close()
+	  }
+	  else {
+	    console.log(err)
+	  }
+	})
+  }
 }
 
 module.exports = Marvel
