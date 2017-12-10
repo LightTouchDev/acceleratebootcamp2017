@@ -105,7 +105,7 @@ class Marvel {
   	 .fail(console.error)
  	 .done()
   }
-/*
+
   insertDocuments(docs){
 	MongoClient.connect(this.url, (err,db) =>{
 	  if(!err){
@@ -121,14 +121,14 @@ class Marvel {
 	})
   }
 
-   // Perform a simple find and return all the documents
+  /* // Perform a simple find and return all the documents
     collection.find().toArray(function(err, docs) {
       test.equal(null, err);
       test.equal(3, docs.length);
 
       db.close();
     });
-*/
+
   findDocs(docs) {
 	MongoClient.connect(this.url, (err,db) =>{
 	  if(!err){
@@ -144,6 +144,7 @@ class Marvel {
 	  }
 	})
   }
+*/
 }
 
 module.exports = Marvel

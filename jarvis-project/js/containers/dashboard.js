@@ -1,7 +1,8 @@
 import Card from '../components/card'
 let MongoClient = require('mongodb').MongoClient
 
-let Marvel = require('../js/marvel.js')
+let Marvel = require('../marvel.js')
+let marvel = new Marvel()
  
 export default class Dashboard {
   constructor () {
@@ -32,10 +33,31 @@ export default class Dashboard {
 
     container.appendChild(title)
 
-    let marvel = new Marvel()
 
-    marvel.findDocs(info) {
-      MongoClient.connect(this.url, (err,db) =>{
+    MongoClient.connect(this.url, (err, db) => {
+        if(!err) {
+        let getHeroes = db.collection('heroes')
+        let cursor = getHeroes.find()
+
+        cursor.forEach(function(err, item){
+          container.append(new Card({
+            title: item.name,
+            image: item.image,
+            description: item.description
+            //link: item.link,
+            //linktext: item.linktext
+          }))
+        })
+       
+        db.close()
+      }
+      else {
+        console.log(err)
+      }
+    })
+/*
+    let heroes = marvel.findDocs()
+ 
 	for(let i = 0; i < heroes.length; i++) {
     	  container.append(new Card({
 	    title: heroes[i].name,
@@ -43,9 +65,8 @@ export default class Dashboard {
 	    image: heroes[i].image
 	  }))
         }
-      })	
-    }
-
+    
+*/
 /*
     let thorCard = new Card({
       title: 'Thor',
